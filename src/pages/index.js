@@ -1,8 +1,11 @@
 import React from 'react'
+import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const Home = () => {
+const Home = ({ data }) => {
+  console.log(data)
   return (
-    <div>
+    <>
       <header className="header">
         <div className="container">
           <div className="site">
@@ -20,7 +23,7 @@ const Home = () => {
       </header>
       <section className="hero">
         <figure>
-          <img src="/images/hero.jpg" alt="" />
+          <GatsbyImage image={data.hero.childImageSharp.gatsbyImageData} alt="" />
         </figure>
         <div className="catch">
           <h1>There is no love sincerer than<br /> the love of food.</h1>
@@ -97,8 +100,44 @@ const Home = () => {
           </ul>
         </div>
       </footer>
-    </div>
+    </>
   )
 }
+
+export const query = graphql`
+  query {
+    hero: file(relativePath: {eq: "hero.jpg"}) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    fruit: file(relativePath: {eq: "fruit.jpg"}) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    grain: file(relativePath: {eq: "grain.jpg"}) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    beverage: file(relativePath: {eq: "beverage.jpg"}) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    berry: file(relativePath: {eq: "berry.jpg"}) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    pattern: file(relativePath: {eq: "pattern.jpg"}) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+  }
+`
+
 
 export default Home

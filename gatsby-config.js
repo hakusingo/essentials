@@ -6,10 +6,16 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "はじめてのGatsby Site",
+    author: "Reffect",
+    category: ["Laravel", "Vue.js", "React"],
+    user: { name: "John Doe", email: "john@example.com" },
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-    `gassby-plugin-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
