@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const Home = ({ data }) => {
-  console.log(data)
   return (
     <>
       <header className="header">
@@ -23,7 +22,11 @@ const Home = ({ data }) => {
       </header>
       <section className="hero">
         <figure>
-          <GatsbyImage image={data.hero.childImageSharp.gatsbyImageData} alt="" />
+          <GatsbyImage 
+            image={data.hero.childImageSharp.gatsbyImageData} 
+            style={{ height: "100%" }}
+            alt=""
+          />
         </figure>
         <div className="catch">
           <h1>There is no love sincerer than<br /> the love of food.</h1>
@@ -39,7 +42,11 @@ const Home = ({ data }) => {
           <div className="details">
             <div className="detail">
               <figure>
-                <img src="/images/fruit.jpg" alt="" />
+                <GatsbyImage 
+                  image={data.fruit.childImageSharp.gatsbyImageData} 
+                  style={{ height: "100%" }}
+                  alt=""
+                />
               </figure>
               <h3>フルーツ</h3>
               <p>FRUIT</p>
@@ -47,7 +54,11 @@ const Home = ({ data }) => {
             </div>
             <div className="detail">
               <figure>
-                <img src="/images/grain.jpg" alt="" />
+                <GatsbyImage 
+                  image={data.grain.childImageSharp.gatsbyImageData} 
+                  style={{ height: "100%" }}
+                  alt=""
+                />
               </figure>
               <h3>穀物</h3>
               <p>GRAIN</p>
@@ -55,7 +66,11 @@ const Home = ({ data }) => {
             </div>
             <div className="detail">
               <figure>
-                <img src="/images/beverage.jpg" alt="" />
+                <GatsbyImage 
+                  image={data.beverage.childImageSharp.gatsbyImageData} 
+                  style={{ height: "100%" }}
+                  alt=""
+                />
               </figure>
               <h3>飲み物</h3>
               <p>BEVERAGE</p>
@@ -67,7 +82,11 @@ const Home = ({ data }) => {
       <section className="photo">
         <h2 className="sr-only">Photo</h2>
         <figure>
-          <img src="/images/berry.jpg" alt="赤く熟したベリー" />
+          <GatsbyImage 
+            image={data.berry.childImageSharp.gatsbyImageData} 
+            style={{ height: "100%" }}
+            alt=""
+          />
         </figure>
       </section>
       <footer className="footer">
